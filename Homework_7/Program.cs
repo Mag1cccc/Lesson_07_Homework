@@ -8,7 +8,11 @@
 
             // CheckJackpot();
 
-            CalculateTotalPoints();
+            // CalculateTotalPoints();
+
+            CalculateWeeklySalary();
+
+
         }
         #region Task 1
         public static void CalculateSquareDifference()
@@ -68,6 +72,46 @@
 
             var totalPoints = (winCount * win) + (drawCount * draw) + (lostCount * lose);
             Console.WriteLine(totalPoints);
+
+        }
+
+        #endregion
+
+        #region Task 4
+
+        public static void CalculateWeeklySalary() {
+            Console.WriteLine("Enter hours for 7 days (separated by space): ");
+            string input = Console.ReadLine();
+
+            var hoursStrings = input.Split(' ');
+            var hours = new int[7];
+            var totalSalary = 0;
+
+            for (var i = 0; i < hoursStrings.Length; i++)
+            {
+                int.TryParse(hoursStrings[i], out hours[i]);
+            }
+
+            for (var i = 0; i < hours.Length; i++) {
+                if (i < 5)
+                {
+                    if (hours[i] <= 8)
+                    {
+                        totalSalary += hours[i] * 10;
+                    }
+                    else
+                    {
+                        totalSalary += (8 * 10) + (hours[i] - 8) * 15;
+                    }
+
+                }
+                else 
+                {
+                    totalSalary += hours[i] * 20;
+                }
+            }
+
+            Console.WriteLine(totalSalary);
 
         }
 
