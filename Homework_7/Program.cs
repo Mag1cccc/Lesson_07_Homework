@@ -32,7 +32,7 @@
         public static void CheckJackpot() {
             
                 Console.WriteLine("Enter symbols: ");
-                string[] symbols = Console.ReadLine().Split(' ');
+                var symbols = Console.ReadLine().Split(' ');
 
                 var isJackpot = true;
             
