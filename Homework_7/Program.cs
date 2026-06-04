@@ -12,7 +12,9 @@
 
             // CalculateWeeklySalary();
 
-            CountProgressDays();
+            // CountProgressDays();
+
+            FilterByLength();
         }
         #region Task 1
         public static void CalculateSquareDifference()
@@ -139,6 +141,29 @@
                 }
             }
             Console.WriteLine(progressCount);
+        }
+
+        #endregion
+
+        #region Task 6
+
+        public static void FilterByLength() {
+            Console.WriteLine("Enter the value of N:");
+            int.TryParse(Console.ReadLine(), out var input);
+            string[] words = {"Hello", "World", "Programming", "communication"};
+
+            var filtered = words
+                                    .Where(word => word.Length >= input)
+                                    .ToList();
+
+            if (filtered.Count > 0) {
+                Console.WriteLine(string.Join(", ", filtered));
+            }
+            else
+            {
+                Console.WriteLine("No elements found");
+            }
+           
         }
 
         #endregion
