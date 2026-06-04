@@ -10,9 +10,9 @@
 
             // CalculateTotalPoints();
 
-            CalculateWeeklySalary();
+            // CalculateWeeklySalary();
 
-
+            CountProgressDays();
         }
         #region Task 1
         public static void CalculateSquareDifference()
@@ -113,6 +113,32 @@
 
             Console.WriteLine(totalSalary);
 
+        }
+
+        #endregion
+
+        #region Task 5
+
+        public static void CountProgressDays()
+        {
+            Console.WriteLine("Enter daily training results separated by space: ");
+            var input = Console.ReadLine();
+            var parts = input.Split(' ');
+            var days = new int[parts.Length];
+
+            for (var i = 0; i < parts.Length; i++) {
+                int.TryParse(parts[i], out days[i]);
+            }
+
+            int progressCount = 0;
+
+            for (var i = 1; i < days.Length; i++) {
+                if (days[i] > days[i - 1])
+                {
+                    progressCount++;    
+                }
+            }
+            Console.WriteLine(progressCount);
         }
 
         #endregion
