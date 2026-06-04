@@ -4,9 +4,11 @@
     {
         static void Main(string[] args)
         {
-            CalculateSquareDifference();
-        }
+            // CalculateSquareDifference();
 
+            CheckJackpot();
+        }
+        #region Task 1
         public static void CalculateSquareDifference()
         {
             Console.WriteLine("Enter radius of the circle: ");
@@ -23,5 +25,29 @@
                 Console.WriteLine("Invalid input. Please enter a valid integer.");
             }
         }
+        #endregion
+
+        #region Task 2
+
+        public static void CheckJackpot() {
+            
+                Console.WriteLine("Enter symbols: ");
+                string[] symbols = Console.ReadLine().Split(' ');
+
+                var isJackpot = true;
+            
+                for (int i = 1; i < symbols.Length; i++) {
+                    if (symbols[i] != symbols[0]) {
+                        isJackpot = false;
+                        break;
+                    } 
+                }
+
+                Console.WriteLine(isJackpot ? "Yes" : "No");               
+        }
+        
+        #endregion
+
+
     }
 }
