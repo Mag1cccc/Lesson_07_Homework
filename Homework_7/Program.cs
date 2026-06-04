@@ -6,7 +6,9 @@
         {
             // CalculateSquareDifference();
 
-            CheckJackpot();
+            // CheckJackpot();
+
+            CalculateTotalPoints();
         }
         #region Task 1
         public static void CalculateSquareDifference()
@@ -45,7 +47,30 @@
 
                 Console.WriteLine(isJackpot ? "Yes" : "No");               
         }
-        
+
+        #endregion
+
+        #region Task 3
+
+        public static void CalculateTotalPoints() {
+            var win = 3;
+            var draw = 1;
+            var lose = 0;
+
+            Console.WriteLine("Enter number of wins: ");
+            int.TryParse(Console.ReadLine(), out var winCount);
+
+            Console.WriteLine("Enter number of draws: ");
+            int.TryParse(Console.ReadLine(), out var drawCount);
+
+            Console.WriteLine("Enter number of losses: ");
+            int.TryParse(Console.ReadLine(), out var lostCount);
+
+            var totalPoints = (winCount * win) + (drawCount * draw) + (lostCount * lose);
+            Console.WriteLine(totalPoints);
+
+        }
+
         #endregion
 
 
